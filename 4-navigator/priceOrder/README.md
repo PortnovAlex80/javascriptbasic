@@ -1,1 +1,0 @@
-this code folder for prehome work exercise
