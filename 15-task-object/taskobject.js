@@ -8,7 +8,7 @@ const toDoList = {
            }
     ],
     addTask: function (title = 'No title', priority = 5) { 
-        isCheck = (title, priority) => { print('Service addTask: some args verifies')}, // chacking imitation
+        isCheck = (title, priority) => { print('Service addTask: some args verifies')}, // checking imitation
         // some chechink for args
         ++this.tasksIndex,
         this.tasks.push({
@@ -22,9 +22,8 @@ const toDoList = {
       if (id === 'undefined') { 
         print('Service removeTask: Task id invalid');
         return false }; // imitation checking
-          
         let indexTaskByIdinArray = this.findTaskById(id); //find task by id
-    
+        // deleted task by id
         (indexTaskByIdinArray) 
             ? // remove task and log it
             this.tasks.splice(indexTaskByIdinArray,1)
@@ -57,9 +56,9 @@ const toDoList = {
         return        order ?
         this.tasks.sort( (a, b) => a.priority > b.priority ) 
         : 
-        this.tasks.sort( (a, b) => a.priority < b.priority ) 
-        
+        this.tasks.sort( (a, b) => a.priority < b.priority )     
     },
+
     findTaskById: function(id) { 
         let indexTaskByIdinArray = this.tasks.findIndex(el => el.id === id ); 
         if (indexTaskByIdinArray <0) {
@@ -72,8 +71,7 @@ const toDoList = {
 
 function  print(message) {
     console.log(message)
-}
-
+};
 
 // main 
 print(toDoList.tasks);

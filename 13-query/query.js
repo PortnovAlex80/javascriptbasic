@@ -1,10 +1,9 @@
-
 const query = { 
     search: 'Timur',
     take: 10
 }
 
-print(queryToString(query))
+console.log(queryToString(query))
 
 function queryToString(query) {
     let string = ''; // = Object.keys(query);
@@ -13,9 +12,3 @@ function queryToString(query) {
     }  
     return string;
 }
-
-
-function  print(message) {
-    console.log(message)
-}
-
