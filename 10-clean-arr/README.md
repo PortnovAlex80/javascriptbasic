@@ -1,1 +1,1 @@
-SORT LOOPS JS BASIC
+10 clean array 

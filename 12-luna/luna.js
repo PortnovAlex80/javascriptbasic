@@ -1,9 +1,11 @@
+let acc = 0; // init accum
 const cart ='4561-2612-1234-5467';
-
-
+// trim all "-" and get array str --> array
 const cartarr = trimstr(cart).split("");
-print((cartarr))
+// check it
+console.log((cartarr));
 
+// reducing 
 acc = cartarr.reduce( (acc, element, index) => {
     value = Number(element);
     return acc += ((index+1) % 2 !== 0 ) // even or not 
@@ -12,12 +14,8 @@ acc = cartarr.reduce( (acc, element, index) => {
         : value; 
 }, 0);
 
-print(`Cart number ${cart} ${acc % 10 == 0 ? 'validated luna OK' : 'ERROR VALIDATION'}`);
-
-function  print(message) {
-    console.log(message)
-}
+console.log(`Cart number ${cart} ${acc % 10 == 0 ? 'validated luna OK' : 'ERROR VALIDATION'}`);
 
 function trimstr(str) {
-    return str.replaceAll('-','')
+    return str.replaceAll('-','');
 }
