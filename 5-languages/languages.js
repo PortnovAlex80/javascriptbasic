@@ -2,22 +2,16 @@
 
 //init
 const input = prompt('Enter your languages: en, ru, de');
-
 switch(input) {
     case 'en':
-        print('Hello');
+        console.log('Hello');
         break;
     case 'ru':
-        print('Privet');
+        console.log('Privet');
         break;
     case 'de':
-        print('Gutten tag');
+        console.log('Gutten tag');
         break;
     default:
-        print(`I dont understand you expression ${input}`)
-}
-
-//libs 
-function  print(message) {
-    console.log(message)
+        console.log(`I dont understand you expression ${input}`)
 }
