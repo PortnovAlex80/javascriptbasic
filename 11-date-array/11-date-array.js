@@ -1,9 +1,4 @@
-const dateArray = ['10-02-2022', 
-                    'test',
-                    '11/12/2023', 
-                    '00/13/2022', 
-                    '41/12/2023', 
-                    '15/ss/2046'];
+const dateArray = ['10-02-2022', 'test', '11/12/2023', '00/13/2022', '41/12/2023', '15/ss/2046'];
 // check date lenght must be = 10; 
 function isLength(date) {
     return (date.length === 10);
