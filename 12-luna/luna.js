@@ -1,9 +1,12 @@
-let acc = 0; // init accum
 const cart ='4561-2612-1234-5467';
+
+console.log(luna(cart));
+
+function luna(cart) {
+let acc = 0; // init accum
+
 // trim all "-" and get array str --> array
-const cartarr = trimstr(cart).split("");
-// check it
-console.log((cartarr));
+const cartarr = cart.replaceAll('-','').split("");
 
 // reducing 
 acc = cartarr.reduce( (acc, element, index) => {
@@ -14,8 +17,5 @@ acc = cartarr.reduce( (acc, element, index) => {
         : value; 
 }, 0);
 
-console.log(`Cart number ${cart} ${acc % 10 == 0 ? 'validated luna OK' : 'ERROR VALIDATION'}`);
-
-function trimstr(str) {
-    return str.replaceAll('-','');
-}
+return acc % 10 == 0 ? true : false
+};
