@@ -24,7 +24,7 @@ const toDoList = {
         // add new object
         let commonObject = { title: title_arg , id: id_default, priority: priority_arg};
         
-        // how many args&
+        // how many args
         const args_amount = arguments.length;
         const object_keys_amount = Object.keys(objectShcema).length;
         const keys_object = Object.keys(objectShcema);
