@@ -1,14 +1,17 @@
 const query = { 
     search: 'Timur',
-    take: 10
+    take: 10,
+    offset: 50
 }
-
-console.log(queryToString(query))
 
 function queryToString(query) {
-    let string = ''; // = Object.keys(query);
+    let query_params = []; // = Object.keys(query);
+    let index = 0;
     for (const key in query) {
-        string += '&' + key + '=' + query[key]
-    }  
-    return string;
-}
+        query_params[index]  = key + '=' + query[key];
+        ++index;
+    };
+    return query_params.join('&');
+};
+
+console.log(queryToString(query))
