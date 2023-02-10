@@ -1,43 +1,7 @@
-// const buttonPlus = document.createElement('button');
-// buttonPlus.setAttribute('class','plus');
-// buttonPlus.innerHTML = '+';
-
-// const buttonMunis = document.createElement('button');
-// buttonPlus.setAttribute("class","minus");
-// buttonMunis.innerHTML = '-';
-
-// const buttonMult = document.createElement('button');
-// buttonPlus.setAttribute("class","mult");
-// buttonMult.innerHTML = '*';
-
-// const buttonDev = document.createElement('button');
-// buttonPlus.setAttribute("class","dev");
-// buttonDev.innerHTML = '/';
-
-// const buttonEnter = document.createElement('button');
-// buttonPlus.setAttribute("class","enter");
-// buttonEnter.innerHTML = '=';
-
-// const inputA = document.createElement('input');
-// inputA.setAttribute('class','a')
-// const inputB = document.createElement('input');
-// inputB.setAttribute('class','b')
-// const inputC = document.createElement('input');
-// inputC.setAttribute('class','c')
-
-// document.body.appendChild(inputA);
-// document.body.appendChild(buttonPlus)
-// document.body.appendChild(buttonMunis)
-// document.body.appendChild(buttonMult)
-// document.body.appendChild(buttonDev)
-// document.body.appendChild(inputB);
-// document.body.appendChild(buttonEnter)
-// document.body.appendChild(inputC);
-
-let operation = '+';
-let a = 0;
-let b = 0;
-let res = 0;
+let operation = '+'; // operator separator
+let a = 0; // 1 arg
+let b = 0; // 2 arg
+let res = 0; // result accumulator
 
 addEventListener('load', () =>{print('loaded') })
 print(document.querySelector('.a').value);
@@ -85,3 +49,38 @@ function  print(message) {
     console.log(message)
 }
 
+// const buttonPlus = document.createElement('button');
+// buttonPlus.setAttribute('class','plus');
+// buttonPlus.innerHTML = '+';
+
+// const buttonMunis = document.createElement('button');
+// buttonPlus.setAttribute("class","minus");
+// buttonMunis.innerHTML = '-';
+
+// const buttonMult = document.createElement('button');
+// buttonPlus.setAttribute("class","mult");
+// buttonMult.innerHTML = '*';
+
+// const buttonDev = document.createElement('button');
+// buttonPlus.setAttribute("class","dev");
+// buttonDev.innerHTML = '/';
+
+// const buttonEnter = document.createElement('button');
+// buttonPlus.setAttribute("class","enter");
+// buttonEnter.innerHTML = '=';
+
+// const inputA = document.createElement('input');
+// inputA.setAttribute('class','a')
+// const inputB = document.createElement('input');
+// inputB.setAttribute('class','b')
+// const inputC = document.createElement('input');
+// inputC.setAttribute('class','c')
+
+// document.body.appendChild(inputA);
+// document.body.appendChild(buttonPlus)
+// document.body.appendChild(buttonMunis)
+// document.body.appendChild(buttonMult)
+// document.body.appendChild(buttonDev)
+// document.body.appendChild(inputB);
+// document.body.appendChild(buttonEnter)
+// document.body.appendChild(inputC);
