@@ -1,5 +1,4 @@
 const toDoList = {
-    tasksIndex: 0,
     tasks: [
         { 
             title: 'Epic',
@@ -7,47 +6,23 @@ const toDoList = {
             priority: 1
            }
     ],
-    addTask: function (title = 'No title', priority = 5) { 
+    addTask: function (task = {title: 'No title', id: 0, priority: 5}) { // default task if empty object
         isCheck = (title, priority) => { print('Service addTask: some args verifies')}, // checking imitation
         // some chechink for args
-        ++this.tasksIndex,
-        this.tasks.push({
-            title,
-            id: this.tasksIndex,
-            priority 
-        });
-        print(`Service addTask: task-${this.tasksIndex} added`); 
+        this.tasks.push(task);
     },
-    removeTaskById: function(id = 'undefined') {
-      if (id === 'undefined') { 
-        print('Service removeTask: Task id invalid');
-        return false }; // imitation checking
-        let indexTaskByIdinArray = this.findTaskById(id); //find task by id
+    removeTaskById: function(id) {
+        const indexTaskByIdinArray = this.findTaskById(id); //find task by id
         // deleted task by id
-        (indexTaskByIdinArray) 
-            ? // remove task and log it
-            this.tasks.splice(indexTaskByIdinArray,1)
-            && print(`Service removeTask: Task id-${indexTaskByIdinArray} deleted`)
-            :  print(`Service removeTask: Task id-${id} not found`) // if not found - report it
+        (indexTaskByIdinArray) && this.tasks.splice(indexTaskByIdinArray,1);
         },
-    updateTaskById: function(id = 'undefined', params = 'undefined') { 
-        if ((id === 'undefined') || (params === 'undefined')) { 
-        print('Service updateTask: Invalid arguments');
-        return false }; // imitation checking
+    updateTaskById: function(taskForUpdate) { 
         //find task by id        
-        let indexTaskByIdinArray = this.findTaskById(id);
-        if (!indexTaskByIdinArray) {
-            print('Service updateTask: task not found'); 
-            return false; // if not found - return
-        }   // check params is number
-        // params - is title or priority
-        if (typeof params !== 'string' || 'number') { return false };// some checking
-        typeof params === 'string' 
-        // isString - Title
-        ? this.tasks[indexTaskByIdinArray].title = params && print('Service updateTask: title updated')
-        //isNumber - Priority
-        : this.tasks[indexTaskByIdinArray].priority = params && print('Service updateTask: priotity updated'); //maybe need check for priority interval
-        },
+        let indexTaskByIdinArray = this.findTaskById(taskForUpdate.id);
+        if (!indexTaskByIdinArray) { return false; // if not found - return
+        } 
+        this.tasks[indexTaskByIdinArray] = taskForUpdate;
+    },
     sortTasksByPriority: function(order = 'DSC') {
         if (!this.tasks.length) return false; // if task is empty return false
 
