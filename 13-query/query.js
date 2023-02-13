@@ -5,13 +5,12 @@ const query = {
 }
 
 function queryToString(query) {
-    let query_params = []; // = Object.keys(query);
+    let queryParams = []; // = Object.keys(query);
     let index = 0;
     for (const key in query) {
-        query_params[index]  = key + '=' + query[key];
-        ++index;
+        queryParams.push(key + '=' + query[key]);
     };
-    return query_params.join('&');
+    return queryParams.join('&');
 };
 
 console.log(queryToString(query))
