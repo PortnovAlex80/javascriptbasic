@@ -1,23 +1,20 @@
-// input
-// string - summainRUB
-// input promt - USD EUR DM RUP
-const incomeRUB = 1000;
-const inputcurrency = 'USD';
-let convertSum = 0; 
-// curruncy list
 const changesBankList = [['USD', 70], ['EUR', 90], ['RUP', 35]];
-//promt
-inputcurrency = prompt('USD EUR RUP');
-incomeRUB = prompt('How many RUBLES do you have?');
-//main
-console.log(convertor());
-//libs 
-function convertor() {
-let isExist = false; // if includes
-changesBankList.forEach(function (el) {
-    isExist = (el[0] === inputcurrency);
-    convertSum = (isExist) 
-    ? (incomeRUB / el[1]) : convertSum; // convertation rubles/currency
-    } );
-return convertSum || null;
+
+console.log(currencyConvertor(7000, 'RUB', 'USD'));
+
+function currencyConvertor( sumToChange, incomeCurrency = 'RUB', outcomeCurrency = 'USD' ) {
+    // calculate cross-change RUB as base.
+    let cross = 1; // default cross-change
+    if (incomeCurrency != 'RUB') {
+        cross = currencyConvertor( sumToChange, 'RUB', outcomeCurrency) / currencyConvertor(sumToChange,'RUB', incomeCurrency)
+        return sumToChange * cross;
+    };
+    let isExist = false; // matchs currency
+    changesBankList.forEach(function (el) {
+     isExist = (el[0] == outcomeCurrency);
+     if (isExist) {       
+        convertSum = (sumToChange) / el[1] * cross; 
+     } 
+    });
+    return convertSum || null;
 };
