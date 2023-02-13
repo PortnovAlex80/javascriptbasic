@@ -12,7 +12,6 @@ function currencyConvertor( sumToChange, incomeCurrency = 'RUB', outcomeCurrency
     let isExist = false; // matchs currency
     changesBankList.forEach(function (el) {
      isExist = (el[0] == outcomeCurrency);
-     console.log(`isExist: ${el[0]} - ${isExist}`);  
      if (isExist) {       
         convertSum = (sumToChange) / el[1] * cross; 
      } 
