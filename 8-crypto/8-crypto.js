@@ -4,7 +4,7 @@ function crypto(password) {
     2. right shitf 2 times
     3. reverse
     4. join     */
-    let passarr = devideString(password);
+    const passarr = devideString(password);
     left_password  = passarr.left_password.split("");
     right_password = passarr.right_password.split("");
     // reverse 
@@ -57,6 +57,7 @@ function check (crypto, password) {
     return (hashpass === password) ? 'Password OK' : 'ERROR' 
 }
 // start with test data
-testpass = '123456789'
+testpass = 'password'
+console.log(crypto(testpass));
 console.log(check(crypto(testpass), testpass)); // expect 200
 console.log(check(crypto(testpass), 'sjdkjbksd')); // expect 401
