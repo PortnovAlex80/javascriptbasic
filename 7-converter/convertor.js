@@ -1,7 +1,5 @@
 const changesBankList = [['USD', 70], ['EUR', 90], ['RUP', 35], ['RUB', 1]];
 
-console.log(currencyConvertor(2000, 'RUB', 'RUB'));
-
 function currencyConvertor( sumToChange, incomeCurrency = 'RUB', outcomeCurrency = 'USD' ) {
     // default cross-change
     let cross = 1;
@@ -19,3 +17,5 @@ function currencyConvertor( sumToChange, incomeCurrency = 'RUB', outcomeCurrency
     });
     return convertSum || false;
 };
+
+console.log(currencyConvertor(2000, 'RUB', 'RUB'));
