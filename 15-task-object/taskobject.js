@@ -30,7 +30,6 @@ const toDoList = {
             }
     },
     sort(order = 'DSC') {
-        if (!this.tasks.length) return false;
         return (order !== 'DSC') ? 
             this.tasks.sort( (a, b) => a.priority > b.priority ) :
             this.tasks.sort( (a, b) => a.priority < b.priority ) 

@@ -5,8 +5,7 @@ const query = {
 }
 
 function queryToString(query) {
-    let queryParams = []; // = Object.keys(query);
-    let index = 0;
+    const queryParams = []; // = Object.keys(query);
     for (const key in query) {
         queryParams.push(key + '=' + query[key]);
     };
