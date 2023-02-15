@@ -1,3 +1,5 @@
+'use strict'
+
 const array = [1,40,-5,110,0, -3,57,-43,2]
 const lng = array.length - 1;
 for (let i = 0; i < lng; i++) {

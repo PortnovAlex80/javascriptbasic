@@ -1,3 +1,4 @@
+'use strict'
 const changesBankList = [['USD', 70], ['EUR', 90], ['RUP', 35], ['RUB', 1]];
 
 function currencyConvertor( sumToChange, incomeCurrency = 'RUB', outcomeCurrency = 'USD' ) {
