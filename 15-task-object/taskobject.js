@@ -6,35 +6,37 @@ const toDoList = {
             priority: 1
            }
     ],
-    addTask(task = {title: 'No title', id: 0, priority: 5}) { // default task if empty object
-        this.tasks.push(task);
+    getTaskIndexById(id) { // find task index in tasks array
+        const taskIndex = this.tasks.findIndex(el => el.id === id );
+        if (taskIndex === -1) {
+                console.error(`Task id-${id} not exist`); 
+                return false;
+        };
+        return taskIndex;
     },
-    removeTaskById(id) {
-        const indexTaskByIdinArray = this.findTaskIndexById(id); //find task by id
-        // deleted task by id
-        (indexTaskByIdinArray) && this.tasks.splice(indexTaskByIdinArray,1);
+    add(task) { 
+            this.tasks.push(task);
+    },
+    removeById(id) {
+        const taskIndex = this.getTaskIndexById(id);
+        if (taskIndex) {
+            this.tasks.splice(taskIndex,1);}
         },
-    updateTaskById(taskForUpdate) { 
-        //find task by id        
-        let indexTaskByIdinArray = this.findTaskIndexById(taskForUpdate.id);
-        if (!indexTaskByIdinArray) { return false; // if not found - return
-        } 
-        this.tasks[indexTaskByIdinArray] = taskForUpdate;
+    updateById(id, key, value) {     
+        const taskIndex = this.getTaskIndexById(id);
+        if (taskIndex) { 
+            const task = this.tasks[taskIndex];
+            task[key] = task[key] && value;  
+            }
     },
-    sortTasksByPriority(order = 'DSC') {
-        if (!this.tasks.length) return false; // if task is empty return false
-        let order = (order !== 'DSC') ? true : false // sort order . is nor DSC means ASC
-        return        order 
-        ?
-        this.tasks.sort( (a, b) => a.priority > b.priority ) 
-        : 
-        this.tasks.sort( (a, b) => a.priority < b.priority )     
-    },
-    findTaskIndexById(id) { // find task index in tasks array
-        let indexTaskByIdinArray = this.tasks.findIndex(el => el.id === id ); 
-        return (indexTaskByIdinArray <0) ? false : indexTaskByIdinArray;
+    sort(order = 'DSC') {
+        if (!this.tasks.length) return false;
+        const sortOrder = (order !== 'DSC') ? true : false // any order is ASC exeption order DSC
+        return sortOrder 
+            ?  this.tasks.sort( (a, b) => a.priority > b.priority ) 
+            :  this.tasks.sort( (a, b) => a.priority < b.priority )     
     },
     findTaskById(id) {
-        return this.tasks[this.findTaskIndexById(id)]
+        return this.tasks[this.getTaskIndexById(id)]
     }
-};
+}
