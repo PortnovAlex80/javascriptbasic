@@ -31,11 +31,10 @@ const toDoList = {
     },
     sort(order = 'DSC') {
         if (!this.tasks.length) return false;
-        const sortOrder = (order !== 'DSC') ? true : false // any order is ASC exeption order DSC
-        return sortOrder 
-            ?  this.tasks.sort( (a, b) => a.priority > b.priority ) 
-            :  this.tasks.sort( (a, b) => a.priority < b.priority )     
-    },
+        return (order !== 'DSC') ? 
+            this.tasks.sort( (a, b) => a.priority > b.priority ) :
+            this.tasks.sort( (a, b) => a.priority < b.priority ) 
+        },
     findTaskById(id) {
         return this.tasks[this.getTaskIndexById(id)]
     }
