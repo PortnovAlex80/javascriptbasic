@@ -1,6 +1,5 @@
 
 'use strict'
-
 const crypto = (pass) => {
 	const passArr = [...pass];
 	const middle = Math.floor(passArr.length/2);
