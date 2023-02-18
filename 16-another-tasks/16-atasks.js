@@ -45,20 +45,13 @@ const newTask = {
             name: 'Test task',
             description: 'description',
             order: 6
-           }],
-        getTaskIndexById(id) {
-            const taskIndex = this.tasks.findIndex(el => el.id === id );
-            if (taskIndex === -1) {
-                console.error(`Task id-${id} not exist`); 
-                return false;
-            };
-            return taskIndex;
-            }
+           }]
         };
 
+newTask.getTaskIndexById = toDoList.getTaskIndexById.bind(newTask);
 const addTask = toDoList.add;
 const removeTask = toDoList.removeById;
-const updateById = toDoList.updateById.bind(newTask); // bind
+const updateById = toDoList.updateById.bind(newTask);
 const sortTask = toDoList.sort.bind(newTask); 
 const findTask = toDoList.findTaskById.bind(newTask);
 
